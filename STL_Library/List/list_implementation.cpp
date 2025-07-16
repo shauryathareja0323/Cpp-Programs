@@ -14,6 +14,7 @@ int main(){
     l.emplace_back(4);
     l.pop_back();
     cout<<l.size()<<endl;
+    //cout<<l[3]<<endl; //Because of the concept of doubly linked list we cannot access any random position in the list
 
     for(int i:l){
         cout<<i<<endl;
