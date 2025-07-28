@@ -11,5 +11,8 @@ int main(){
     for(int i:d){
         cout<<i<<" ";
     }
+
+    cout<<d[0]<<endl;
+    
     return 0;
 }
