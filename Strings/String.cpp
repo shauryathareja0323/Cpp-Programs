@@ -12,7 +12,7 @@ int main(){
 
     str2[7]='A';
 
-    //cout<<str;
+    cout<<str;
     cout<<str1<<endl;
     cout<<str1[2]<<endl;
     cout<<str2<<endl;
