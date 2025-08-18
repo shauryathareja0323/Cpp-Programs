@@ -3,6 +3,7 @@ using namespace std;
 
 int main(){
     int n,m;
+    pair<int,int> p;
     cin>>n>>m;
 
     int arr[n][m];
@@ -21,15 +22,18 @@ int main(){
     for(int i=0; i<n; i++){
         for(int j=0; j<m; j++){
            if(arr[i][j]==k){
-            cout<<"Value found at: ";
-            cout<<i+1<<","<<j+1;
+            p.first=i;
+            p.second=j;
+            cout<<p.first<<","<<p.second<<endl;
             a=1;
            } 
         }
     }
     
     if(a==0){
-        cout<<"Value not found";
+        p.first=-1;
+        p.second=-1;
+        cout<<p.first<<","<<p.second<<endl;
     }
 
     return 0;
