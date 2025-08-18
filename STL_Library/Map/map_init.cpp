@@ -16,12 +16,14 @@ int main(){
 
     m.erase("tablet");
 
+    m["tv"] = m["tv"] + 1;
+
     for(auto p:m){
         cout<<p.first<<" "<<p.second<< endl; //It will print it in the ascending order of lexographic values of the key.
     }
 
     cout<<"Count of key= "<<m.count("laptop")<<endl;
-    cout<<"Count of value= "<<m["laptop"]<<endl;
+    cout<<"Count of value= "<<m["a"]<<endl;
 
     if(m.find("camera") != m.end()){
         cout<<"found";
