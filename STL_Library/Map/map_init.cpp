@@ -17,6 +17,7 @@ int main(){
     m.erase("tablet");
 
     m["tv"] = m["tv"] + 1;
+    m["ipad"]=m["ipad"] + 1;
 
     for(auto p:m){
         cout<<p.first<<" "<<p.second<< endl; //It will print it in the ascending order of lexographic values of the key.
