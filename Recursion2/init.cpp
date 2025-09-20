@@ -2,11 +2,12 @@
 using namespace std;
 
 void abc(int n){
-    if(n>0){
-        cout<<n<<endl;
-        n--;
-        abc(n);
+    if(n==0){
+        return;
     }
+    cout<<n<<endl;
+    n--;
+    abc(n);
 }
 
 
