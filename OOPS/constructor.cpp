@@ -17,11 +17,20 @@ public:
     }
 
     // Parameterized Constructor
-    Teacher(string n, string d, string s, double sal){ //This is an example of constructor which will always run without compiler creating it's own constructor, this time we have created our own constructor.
-        name = n;
-        dept = d;
-        subject = s;
-        salary = sal;
+    Teacher(string name, string dept, string subject, double salary){ //This is an example of constructor which will always run without compiler creating it's own constructor, this time we have created our own constructor.
+        this->name = name;
+        this->dept = dept;
+        this->subject = subject;
+        this->salary = salary;
+    }
+
+    // Copy Constructor()
+    Teacher(Teacher &orgObj){
+        cout<<"I am custom copy constructor"<<endl;
+        this->name = orgObj.name;
+        this->dept = orgObj.dept;
+        this->subject = orgObj.subject;
+        this->salary = orgObj.salary;
     }
 
     string name;
@@ -44,28 +53,19 @@ public:
     void get_info(){
         cout<<"Name: "<<name<<endl;
         cout<<"Subject: "<<subject<<endl;
+        cout<<"Department: "<<dept<<endl;
     }
 };
 
 int main(){
     Teacher t1("Shaurya", "CS", "C++", 250000); //constructor call, whenever a new object is created.
     t1.get_info();
-    //t1.dept = "cs";
-
-
-    // cout<<t1.name<<endl;
-    // cout<<t1.subject<<endl;
-    // cout<<t1.dept<<endl;
-
-    // t1.changeDept("elec");
-    // t1.setSalary(3000);
-
-    // cout<<t1.dept<<endl;
-
-    // double salary = t1.getSalary();
-
-    // cout<<salary<<endl;
     
+    Teacher t2(t1);
+    t1.changeDept("ELE");
+    cout<<endl;
+    t1.get_info();
+    t2.get_info();
 
     return 0;
 }
