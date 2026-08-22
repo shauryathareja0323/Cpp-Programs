@@ -1,25 +1,24 @@
 #include<iostream>
+#include<vector>
 using namespace std;
 
-bool check(int arr[],int n){
-    if(n==1){
+bool check(vector<int> arr, int size){
+    if(size == 1){
         return true;
     }
-    bool restArray=check(arr+1,n-1);
-    return (arr[0]<=arr[1] && restArray);
+
+    arr.pop_back();
+    bool isSorted = check(arr, size-1);
+
+    return (isSorted && arr[size-1]>arr[size-2]);
 }
 
 int main(){
-    int arr[]={1,2,3,4,5,6,7,8,9,10};
+    vector<int> arr = {1,2,3,4,5,6,7,8,9};
 
-    bool r=check(arr,10);
+    bool isSorted = check(arr, arr.size());
 
-    if(r){
-        cout<<"Yes it is sorted"<<endl;
-    }
-    else{
-        cout<<"No, it is not sorted"<<endl;
-    }
+    cout<<isSorted<<endl;
 
     return 0;
 }
