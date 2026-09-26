@@ -10,7 +10,6 @@ public:
         data = val;
         next = NULL;
     }
-
 };
 
 class List{
@@ -24,7 +23,6 @@ public:
 
     void push_front(int val){
         Node* newNode = new Node(val);
-
         if(head == NULL){
             head = tail = newNode;
             return;
@@ -32,14 +30,12 @@ public:
         else{
             newNode->next = head;
             head = newNode;
-            return;
         }
     }
 
     void pop_front(){
         if(head == NULL){
             cout<<"List is empty"<<endl;
-            return;
         }
         else{
             Node* temp = head;
@@ -51,9 +47,10 @@ public:
 
     void push_back(int val){
         Node* newNode = new Node(val);
+        
         if(head == NULL){
             head = tail = newNode;
-            return;
+            return;   
         }
         else{
             tail->next = newNode;
@@ -65,7 +62,6 @@ public:
     void pop_back(){
         if(head == NULL){
             cout<<"List is empty"<<endl;
-            return;
         }
         else{
             Node* temp = head;
@@ -75,7 +71,6 @@ public:
             temp->next = NULL;
             delete tail;
             tail = temp;
-            delete temp;
             return;
         }
     }
