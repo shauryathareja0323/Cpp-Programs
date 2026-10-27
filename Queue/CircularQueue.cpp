@@ -66,7 +66,12 @@ int main(){
     cq.pop();
     cq.push(4);
 
-    cq.print_a();
+    //cq.print_a();
+
+    while(!cq.empty()){
+        cout<<cq.front()<<" ";
+        cq.pop();
+    }
 
 
     return 0;
