@@ -3,7 +3,7 @@ using namespace std;
 
 class CircularQueue{
     int* arr;
-    int curSize;
+    int curSize = 0;;
     int cap;
     int f;
     int r;
@@ -39,7 +39,7 @@ public:
     int front(){
         if(empty()){
             cout<<"CQ is empty"<<endl;
-            return;
+            return 0;
         }
         return arr[f];
     }
@@ -47,9 +47,26 @@ public:
     bool empty(){
         return curSize == 0;
     }
+
+    void print_a(){
+        for(int i = 0; i<cap; i++){
+            cout<<arr[i]<<" ";
+        }
+        cout<<endl;
+    }
 };
 
 int main(){
+    CircularQueue cq(3);
+
+    cq.push(1);
+    cq.push(2);
+    cq.push(3);
+    
+    cq.pop();
+    cq.push(4);
+
+    cq.print_a();
 
 
     return 0;
